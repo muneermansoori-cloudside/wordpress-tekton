@@ -1,0 +1,22 @@
+################### git clone ######################
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: git-clone
+spec:
+  params:
+    - name: repo-url
+      type: string
+
+  steps:
+#This step will clone git repo and store '/workspace/source' and further we'll share this dir to other steps 
+    - name: git-clone
+      image: alpine/git
+      workingDir: /workspace/source
+      command:
+        - sh
+      args:
+        - -c
+        - |
+          git clone $(params.repo-url) ./clone-data
+

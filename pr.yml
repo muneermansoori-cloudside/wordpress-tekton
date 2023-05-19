@@ -1,0 +1,10 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: pipeline-run
+spec:
+  pipelineRef:
+    name: pipeline
+  params:
+  - name: repo-url
+    value: "https://github.com/muneermansoori-cloudside/wordpress-tekton.git"

@@ -1,0 +1,17 @@
+################### MySql deployment ######################
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: mysql-deployment
+spec:
+  steps:
+
+    - name: mysql-deployment
+      image: lachlanevenson/k8s-kubectl
+      workingDir: /workspace/source/
+      command: ["kubectl"]
+      args:
+        - "apply"
+        - "-f"
+        - "./clone-data/mysql-deploy.yaml"
+

@@ -1,0 +1,15 @@
+################### WordPress deployment ######################
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: wordpress-deployment
+spec:
+  steps:
+    - name: wordpress-deployment
+      image: lachlanevenson/k8s-kubectl
+      workingDir: /workspace/source/
+      command: ["kubectl"]
+      args:
+        - "apply"
+        - "-f"
+        - "./clone-data/wordpress-deploy.yaml"
