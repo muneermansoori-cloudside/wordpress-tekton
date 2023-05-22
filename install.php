@@ -312,7 +312,7 @@ switch($step) {
 
                 display_header();
 ?>
-<h1><?php _ex( 'Welcome', 'Howdy' ); ?></h1>
+<h1><?php _ex( 'Welcome Muneer!! ', 'Howdy' ); ?></h1>
 <p><?php _e( 'MUNEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEER' ); ?></p>
 
 <h2><?php _e( 'Information needed' ); ?></h2>
